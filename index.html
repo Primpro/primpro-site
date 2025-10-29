@@ -245,5 +245,31 @@
   </footer>
 
   <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+  <!-- Tracking events for GA4 + Meta + TikTok -->
+<script>
+  // Example: contact button tracking
+  document.addEventListener('DOMContentLoaded', function(){
+    var contactBtn = document.getElementById('contact-btn');
+    if(contactBtn){
+      contactBtn.addEventListener('click', function(){
+        // Google Analytics
+        if (typeof gtag === 'function') {
+          gtag('event', 'contact_click', {
+            event_category: 'engagement',
+            event_label: 'Contact Button'
+          });
+        }
+        // Meta Pixel
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead', {source: 'contact_button'});
+        }
+        // TikTok Pixel
+        if (typeof ttq === 'function') {
+          ttq.track('SubmitForm', {source: 'contact_button'});
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
