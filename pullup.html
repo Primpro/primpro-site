@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pull Up | The P Collective</title>
+<meta name="description" content="Pull Up is a four day workshop by The P Collective helping young people build confidence, a personal brand and real opportunity. Book a pilot for your college.">
+<meta property="og:title" content="Pull Up by The P Collective">
+<meta property="og:description" content="Show up as you. Pull up ready. A four day workshop for young people.">
+<link rel="icon" href="/favicon.svg">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q06BHFDRK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6Q06BHFDRK');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: bold poster hero, then a four day run sheet, story, photo carousel, and a booking block for colleges */
+:root{
+  --bg:#F3F4F7; --surface:#FFFFFF; --ink:#12142B; --muted:#5A5E78;
+  --accent:#2E3BD6; --accent-ink:#FFFFFF; --sun:#F2B705; --line:#DADCE6;
+  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1024; --surface:#171A35; --ink:#EEF0FA; --muted:#A3A7C4;
+  --accent:#7D88FF; --accent-ink:#0E1024; --sun:#F6C83A; --line:#2A2E52; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1024; --surface:#171A35; --ink:#EEF0FA; --muted:#A3A7C4;
+  --accent:#7D88FF; --accent-ink:#0E1024; --sun:#F6C83A; --line:#2A2E52; color-scheme:dark}
+
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+section{padding-block:56px}
+img{max-width:100%}
+[hidden]{display:none!important}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px}
+.slide{position:relative}
+h1,h2,h3{font-family:var(--display);line-height:1.02;text-wrap:balance;margin:0}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.02em}
+h3{font-size:1.35rem;font-weight:800}
+p{margin:0;max-width:62ch}
+.eyebrow{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:800;font-size:1.1rem;color:var(--ink);text-decoration:none}
+.brand span{color:var(--muted);font-weight:500;font-family:var(--body);font-size:.85rem;margin-left:6px}
+.nav .btn{padding:10px 18px}
+
+/* hero */
+.hero{padding-block:24px 56px;display:grid;gap:28px}
+.hero h1{font-size:clamp(4.5rem,18vw,11rem);font-weight:800;letter-spacing:-.05em}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .tag{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:500}
+.hero .tag mark{background:var(--sun);color:#12142B;padding:0 .2em}
+.hero p.lead{font-size:1.1rem;color:var(--muted)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;font-weight:600;border-radius:999px;padding:14px 24px;text-decoration:none;border:2px solid var(--accent);font-family:var(--body);font-size:1rem;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.facts span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.88rem;color:var(--muted);background:var(--surface)}
+
+/* days */
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:32px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.day .num{font-family:var(--display);font-weight:800;font-size:.9rem;color:var(--accent);letter-spacing:.06em}
+.day p{color:var(--muted);font-size:.95rem}
+.day.finale{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.day.finale .num{color:var(--sun)}
+.day.finale p{color:color-mix(in srgb,var(--bg) 78%,transparent)}
+@media (max-width:860px){.days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.days{grid-template-columns:1fr}}
+
+/* story */
+.story{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+.story blockquote{margin:0;font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.2rem);font-weight:500;line-height:1.2;border-left:6px solid var(--sun);padding-left:20px}
+.story .copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+@media (max-width:760px){.story{grid-template-columns:1fr;gap:24px}}
+
+/* who */
+.who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:28px}
+.who div{border-top:3px solid var(--accent);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.who p{color:var(--muted);font-size:.95rem}
+@media (max-width:700px){.who{grid-template-columns:1fr}}
+
+/* carousel */
+.carousel-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);font-size:1.2rem;cursor:pointer}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:24px;padding-bottom:8px;scrollbar-width:thin}
+.slide{flex:0 0 min(78%,380px);aspect-ratio:4/5;max-width:100%;scroll-snap-align:start;border-radius:14px;
+  background:repeating-linear-gradient(135deg,var(--surface) 0 14px,var(--bg) 14px 28px);border:2px dashed var(--line);
+  display:flex;align-items:flex-end;padding:18px;color:var(--muted);font-size:.9rem}
+.slide strong{display:block;color:var(--ink);font-family:var(--display);font-size:1.1rem}
+
+/* book */
+.book{background:var(--accent);color:var(--accent-ink);border-radius:20px;padding:40px 28px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.book .eyebrow{color:color-mix(in srgb,var(--accent-ink) 75%,transparent)}
+.book p{color:color-mix(in srgb,var(--accent-ink) 88%,transparent)}
+.book form{display:flex;flex-direction:column;gap:12px;min-width:0}
+.book label{font-size:.85rem;font-weight:600}
+.book input,.book textarea{width:100%;box-sizing:border-box;border-radius:10px;border:0;padding:12px 14px;font:inherit;background:var(--surface);color:var(--ink)}
+.book .btn{background:var(--sun);color:#12142B;border-color:var(--sun);align-self:flex-start}
+.mail{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.mail code{background:color-mix(in srgb,var(--accent-ink) 18%,transparent);padding:6px 10px;border-radius:8px;font-family:var(--body);user-select:all}
+.mail button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+#formNote{font-size:.9rem}
+@media (max-width:760px){.book{grid-template-columns:1fr;padding:28px 20px}}
+
+footer{padding-block:40px;color:var(--muted);font-size:.88rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="/">The P Collective<span>Pull Up · by Primpro</span></a>
+    <a class="btn primary" href="#book">Bring Pull Up to your college</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="eyebrow">A four day workshop for young people</div>
+    <h1>Pull <em>Up</em></h1>
+    <div class="tag">Show up as you. <mark>Pull up ready.</mark></div>
+    <p class="lead">Pull Up helps young people find their confidence, build their personal brand and step into work and opportunity. It ends with a dressed up showcase where they meet people from the industries they want to join.</p>
+    <div class="ctas">
+      <a class="btn primary" href="#book">Book a pilot</a>
+      <a class="btn ghost" href="#days">See the four days</a>
+    </div>
+    <div class="facts"><span>Ages 16 to 25</span><span>Cohorts of about 15</span><span>Free for students</span><span>London</span></div>
+  </header>
+</div>
+
+<section id="days"><div class="wrap">
+  <div class="eyebrow">The programme</div>
+  <h2>Four days. One glow up.</h2>
+  <div class="days">
+    <article class="day"><div class="num">DAY 1</div><h3>Pull up as you</h3><p>Identity and confidence. Being yourself, owning your story and what it really takes to make it as a creative.</p></article>
+    <article class="day"><div class="num">DAY 2</div><h3>Pull up online</h3><p>Personal branding. Social media that works for you, your CV and LinkedIn, plus a content shoot so everyone leaves with new photos and video.</p></article>
+    <article class="day"><div class="num">DAY 3</div><h3>Pull up ready</h3><p>Applying yourself in the real world. Jobs, side hustles, interviews, money basics and spotting scams.</p></article>
+    <article class="day finale"><div class="num">DAY 4</div><h3>The Pull Up</h3><p>Everyone dressed up. A showcase, networking with guests from work and creative industries, and a proper celebration.</p></article>
+  </div>
+</div></section>
+
+<section><div class="wrap story">
+  <blockquote>"I've never seen them that locked in for a full hour."</blockquote>
+  <div class="copy">
+    <div class="eyebrow">Where it started</div>
+    <h2>It started with one talk at Croydon College.</h2>
+    <p>Adedolapo Kazeem, Michael Okunloro and a friend went in to talk to students about being yourself, being creative and finding your way. A staff member told them they had never seen students that engaged for a whole hour.</p>
+    <p>Pull Up turns that talk into a full programme, built by people who came up the same way. Immigrant journeys, creative careers, real jobs and real hustle.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Who it's for</div>
+  <h2>Built for young people who are ready to be seen.</h2>
+  <div class="who">
+    <div><h3>Students</h3><p>College and sixth form students working out what comes next.</p></div>
+    <div><h3>Young creatives</h3><p>Artists, musicians and content makers turning talent into opportunity.</p></div>
+    <div><h3>First jobbers</h3><p>Young people from immigrant and low income backgrounds stepping into work.</p></div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <div class="carousel-head">
+    <div><div class="eyebrow">Gallery</div><h2>Moments</h2></div>
+    <div class="arrows"><button type="button" id="prev" aria-label="Previous photo">&larr;</button><button type="button" id="next" aria-label="Next photo">&rarr;</button></div>
+  </div>
+  <div class="track" id="track" tabindex="0" aria-label="Photo gallery">
+    <div class="slide"><div><strong>Croydon College talk</strong>Photo goes here</div></div>
+    <div class="slide"><div><strong>Elevate Your Style night</strong>Photo goes here</div></div>
+    <div class="slide"><div><strong>Content day shoot</strong>Photo goes here</div></div>
+    <div class="slide"><div><strong>The Pull Up showcase</strong>Photo goes here</div></div>
+    <div class="slide"><div><strong>Behind the scenes</strong>Photo goes here</div></div>
+  </div>
+</div></section>
+
+<section id="book"><div class="wrap">
+  <div class="book">
+    <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+      <div class="eyebrow">For colleges, schools and partners</div>
+      <h2>Bring Pull Up to your students.</h2>
+      <p>We run Pull Up as a four day block or across a term. Tell us about your students and we'll shape it around them.</p>
+      <div class="mail"><code id="addr">adedolapok@primpro.co.uk</code><button type="button" id="copy">Copy email</button></div>
+    </div>
+    <form id="enquiry">
+      <label for="f-name">Your name</label><input id="f-name" required placeholder="Jane Smith">
+      <label for="f-org">College or organisation</label><input id="f-org" required placeholder="Croydon College">
+      <label for="f-email">Email</label><input id="f-email" type="email" required placeholder="jane@college.ac.uk">
+      <label for="f-msg">What are you looking for?</label><textarea id="f-msg" rows="3" placeholder="A spring term pilot for 15 students"></textarea>
+      <button class="btn" type="submit">Send enquiry</button>
+      <p id="formNote" hidden></p>
+    </form>
+  </div>
+</div></section>
+
+<div class="wrap"><footer>
+  <span>Pull Up is a programme by The P Collective, powered by Primpro Ltd.</span>
+  <a href="/" style="color:inherit">primpro.co.uk</a>
+</footer></div>
+
+<script>
+const track=document.getElementById('track');
+const step=()=>{const s=track.querySelector('.slide');return s?s.getBoundingClientRect().width+16:300};
+document.getElementById('next').onclick=()=>track.scrollBy({left:step(),behavior:'smooth'});
+document.getElementById('prev').onclick=()=>track.scrollBy({left:-step(),behavior:'smooth'});
+document.getElementById('copy').onclick=async e=>{
+  const t=document.getElementById('addr').textContent;
+  try{await navigator.clipboard.writeText(t);e.target.textContent='Copied'}
+  catch{const r=document.createRange();r.selectNodeContents(document.getElementById('addr'));const s=getSelection();s.removeAllRanges();s.addRange(r);e.target.textContent='Selected, press copy'}
+};
+document.getElementById('enquiry').addEventListener('submit',e=>{
+  e.preventDefault();const n=document.getElementById('formNote');
+  const v=id=>document.getElementById(id).value;const sub=encodeURIComponent('Pull Up enquiry: '+v('f-org'));const b=encodeURIComponent('Name: '+v('f-name')+'\nOrganisation: '+v('f-org')+'\nEmail: '+v('f-email')+'\n\n'+v('f-msg'));window.location.href='mailto:adedolapok@primpro.co.uk?subject='+sub+'&body='+b;n.hidden=false;n.textContent='Your email app should open with the enquiry ready to send. If it does not, email adedolapok@primpro.co.uk directly.';
+});
+</script>
+</body>
+</html>
