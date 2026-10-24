@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>P Artists | The P Collective</title>
-<meta name="description" content="P Artists is The P Collective's home for the visual artists we represent. Explore original work by MCCXLV and enquire about pieces, commissions and exhibitions.">
-<meta property="og:title" content="P Artists by The P Collective">
-<meta property="og:description" content="Original work from the artists we represent. Enquire about pieces, commissions and exhibitions.">
-<meta property="og:image" content="https://primpro.co.uk/assets/artists/mcclvx/mcclvx-17.jpg">
+<meta name="description" content="P Artists represents Ogedengbe 'MCCXLV' Oladimeji, a self-taught Nigerian conceptual abstract artist. Explore original works and enquire about pieces, commissions and exhibitions.">
+<meta property="og:title" content="MCCXLV | P Artists by The P Collective">
+<meta property="og:description" content="Original works by Ogedengbe 'MCCXLV' Oladimeji. Enquire through The P Collective.">
+<meta property="og:image" content="https://primpro.co.uk/assets/artists/mccxlv/toxic-system.jpg">
 <link rel="icon" href="/favicon.svg">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Q06BHFDRK"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-6Q06BHFDRK');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap">
 <style>
-/* Layout: gallery wall. Bone ground, black type, pepper red used once per view. Artist intro, then a masonry wall of works, then enquiry. */
+/* Layout: gallery wall. Bone ground, black type, pepper red used sparingly. Artist intro with statement, the wall, exhibitions, then enquiry. */
 :root{
   --bg:#EDE8DF; --surface:#F6F3EE; --ink:#141414; --muted:#5F5A52; --line:#D6D0C4;
   --accent:#B5432A; --accent-ink:#FFFFFF;
@@ -31,37 +31,52 @@ img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-h1,h2,h3{margin:0;line-height:1.02;text-wrap:balance}
+h1,h2,h3{margin:0;line-height:1.05;text-wrap:balance}
 p{margin:0;max-width:62ch}
 .eyebrow{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;color:var(--muted)}
 
 .nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
 .brand{font-weight:800;text-decoration:none;letter-spacing:-.01em}
 .brand span{font-weight:300;color:var(--muted);margin-left:8px}
-.nav nav{display:flex;gap:20px;font-size:.92rem}
+.nav nav{display:flex;gap:20px;font-size:.92rem;flex-wrap:wrap}
 .nav nav a{text-decoration:none;color:var(--muted)}
 .nav nav a[aria-current]{color:var(--ink);font-weight:600}
 
-.hero{padding-block:56px 40px;display:grid;gap:18px}
+.hero{padding-block:56px 32px;display:grid;gap:18px}
 .hero h1{font-size:clamp(3.2rem,11vw,7.5rem);font-weight:800;letter-spacing:-.045em}
 .hero h1 b{font-weight:300}
 .hero p{font-size:1.15rem;color:var(--muted);font-weight:300}
 
-.artist{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:48px;padding-block:40px;border-top:1px solid var(--line);align-items:start}
+.artist{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:48px;padding-block:40px;border-top:1px solid var(--line);align-items:start}
 .artist .name{font-size:clamp(2.6rem,7vw,4.5rem);font-weight:800;letter-spacing:-.04em}
+.artist .full{font-size:1.15rem;font-weight:600;margin-top:10px}
+.artist .say{color:var(--muted);font-size:.9rem;margin-top:2px}
 .artist .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .artist .meta span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;color:var(--muted)}
-.artist .bio{display:flex;flex-direction:column;gap:14px;min-width:0}
-.artist .bio p{font-weight:300;font-size:1.05rem}
-.todo{border-left:3px solid var(--accent);padding:8px 12px;background:var(--surface);font-size:.9rem;color:var(--muted)}
-@media (max-width:800px){.artist{grid-template-columns:1fr;gap:24px}}
+.portrait{margin-top:24px;aspect-ratio:4/5;max-width:100%;background:var(--surface);border:1px dashed var(--line);display:flex;align-items:flex-end;padding:14px;color:var(--muted);font-size:.85rem}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.copy{display:flex;flex-direction:column;gap:16px;min-width:0}
+.copy p{font-weight:300;font-size:1.05rem}
+blockquote{margin:0;border-left:4px solid var(--accent);padding:4px 0 4px 18px;font-size:1.35rem;font-weight:600;line-height:1.35;letter-spacing:-.01em}
+@media (max-width:800px){.artist{grid-template-columns:1fr;gap:24px}.portrait{max-width:360px}}
 
-.wall{columns:3 300px;column-gap:20px;padding-block:8px 56px}
+.wall-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--line)}
+.wall-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em}
+.wall-head p{color:var(--muted);font-size:.9rem}
+.wall{columns:3 300px;column-gap:20px;padding-block:24px 56px}
 .work{break-inside:avoid;margin:0 0 20px;background:var(--surface);border:1px solid var(--line);cursor:zoom-in;padding:0;width:100%;text-align:left;font:inherit;color:inherit;display:block}
 .work img{width:100%;height:auto}
-.work figcaption{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;font-size:.85rem}
-.work figcaption b{font-weight:600}
-.work figcaption span{color:var(--muted)}
+.work .cap{padding:12px 14px;display:grid;gap:2px}
+.work .cap b{font-weight:600;font-size:1rem}
+.work .cap span{color:var(--muted);font-size:.82rem}
+.work .cap .price{color:var(--ink);font-weight:600;font-size:.95rem;margin-top:6px;font-variant-numeric:tabular-nums}
+
+.cv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;padding-block:48px;border-top:1px solid var(--line)}
+.cv h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em}
+.cv ul{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.cv li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.cv li span{color:var(--muted);font-variant-numeric:tabular-nums}
+@media (max-width:800px){.cv{grid-template-columns:1fr;gap:20px}}
 
 .cta{background:var(--ink);color:var(--bg);padding-block:56px}
 .cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
@@ -81,12 +96,14 @@ p{margin:0;max-width:62ch}
 
 footer{border-top:1px solid var(--line);padding-block:32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.85rem;color:var(--muted)}
 
-dialog{border:0;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh}
-dialog::backdrop{background:rgba(10,10,10,.88)}
-dialog img{max-height:82vh;width:auto;margin:0 auto}
-dialog .cap{color:#EDE8DF;display:flex;justify-content:space-between;gap:16px;padding:12px 4px;font-size:.9rem}
-dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:94vh}
+dialog::backdrop{background:rgba(10,10,10,.9)}
+dialog img{max-height:76vh;width:auto;margin:0 auto}
+dialog .dcap{color:#EDE8DF;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:14px 4px}
+dialog .dcap div{display:grid;gap:4px;max-width:60ch}
+dialog .dcap b{font-size:1.1rem}
+dialog .dcap span,dialog .dcap p{font-size:.88rem;color:#C9C2B6}
+dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radius:999px;padding:6px 14px;font:inherit;cursor:pointer;flex:none}
 </style>
 </head>
 <body>
@@ -104,40 +121,53 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
   <section class="hero">
     <div class="eyebrow">P Artists</div>
     <h1>Art with <b>a</b> P.</h1>
-    <p>The visual artists we represent. Original work for collectors, brands and spaces, with commissions and exhibitions handled by The P Collective.</p>
+    <p>The artists we represent. Original work for collectors, brands and spaces, with sales, commissions and exhibitions handled by The P Collective.</p>
   </section>
 
   <section class="artist" id="mccxlv">
     <div>
       <div class="eyebrow">Represented artist</div>
       <h2 class="name">MCCXLV</h2>
-      <div class="meta"><span>Painter</span><span>Nigeria</span><span>Surreal portraits and abstracts</span></div>
+      <div class="full">Ogedengbe Oladimeji</div>
+      <div class="say">Said /Maekli:v/</div>
+      <div class="meta"><span>Conceptual abstract artist</span><span>Nigeria</span><span>Self taught</span></div>
+      <div class="portrait" id="portrait"><span>Artist portrait</span></div>
     </div>
-    <div class="bio">
-      <p>MCCXLV paints faces that stare back. Skulls, gas masks, extra eyes and brains laid open sit beside scripture, outer space and storms of pure colour. The work moves between surreal portraits and abstract pours, and keeps asking what we see when we look at ourselves.</p>
-      <p class="todo">Placeholder bio written from the work. Replace with 80 to 120 words from the artist: where he is from, how he started, what drives the work.</p>
+    <div class="copy">
+      <blockquote>"From ashes, we mould. I explore the beauty within imperfection."</blockquote>
+      <p>Ogedengbe Oladimeji, known as MCCXLV, is a Nigerian conceptual abstract artist whose work explores the complexity of beauty within imperfection. He creates layered psychological environments shaped by memory, tension and lived experience, translating fragments of existence into carefully constructed compositions.</p>
+      <p>Entirely self taught, his visual language has grown through experimentation and repetition. A background in photography sharpened his eye for framing, light and spatial balance. He often says that if he were not painting or working behind the camera, he would be cooking. To him, all three are acts of composition, timing and care.</p>
+      <p>His work has been shown at Uber Live, the ICAF Art Show, Social Media Week, Art Summit Nigeria and the first Street Souk in Lagos, and has sold to a private collector in New York. He has also led creative direction and photography for artists including Mohbad, Ajebutter and Naira Marley's UK tour merchandise.</p>
+      <p>"I paint because the work deserves to exist, and I intend for it to be encountered in museums, galleries, airports, and other unexpected spaces."</p>
     </div>
   </section>
 
-  <section class="wall" aria-label="Works by MCCXLV">
-    <!-- Titles, sizes and availability to be confirmed with the artist -->
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-17.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-17.jpg" alt="Painting of a figure in a suit wearing a gas mask, the lenses reflecting a city" loading="lazy" width="1284" height="1593"><figcaption><b>Work 01</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-12.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-12.jpg" alt="Portrait of a bald woman with four eyes, red lips and a polka dot top on a blue ground" loading="lazy" width="1107" height="1600"><figcaption><b>Work 02</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-09.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-09.jpg" alt="A serpent coiled into a treble clef over a city skyline, with an apple and an eye above" loading="lazy" width="1170" height="1400"><figcaption><b>Work 03</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-10.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-10.jpg" alt="A skull with one green eye and one orange eye on a turquoise ground" loading="lazy" width="1167" height="1600"><figcaption><b>Work 04</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-14.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-14.jpg" alt="A head in rainbow outline, showing the brain and skull inside and a heart below" loading="lazy" width="1284" height="1442"><figcaption><b>Work 05</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-18.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-18.jpg" alt="Collage face with crying eyes, newspaper skin and red lips under a stormy sky" loading="lazy" width="1284" height="1496"><figcaption><b>Work 06</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-01.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-01.jpg" alt="Green faced figure with half the brain exposed as circuitry, on a purple ground" loading="lazy" width="1600" height="1567"><figcaption><b>Work 07</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-13.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-13.jpg" alt="Deep blue face with one mechanical eye, a red nose and a wide grin" loading="lazy" width="1202" height="1600"><figcaption><b>Work 08</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-16.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-16.jpg" alt="A dripping black skull shape inside a yellow circle" loading="lazy" width="1284" height="1517"><figcaption><b>Work 09</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-03.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-03.jpg" alt="The Ten Commandments on two stone tablets, framed by flowers, angels and flames" loading="lazy" width="1600" height="1333"><figcaption><b>Work 10</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-07.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-07.jpg" alt="A bare black tree and a lone figure against a yellow sky" loading="lazy" width="1170" height="921"><figcaption><b>Work 11</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-08.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-08.jpg" alt="Space scene with planets, triangles, a flying saucer and snowy mountains" loading="lazy" width="1170" height="929"><figcaption><b>Work 12</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-11.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-11.jpg" alt="A lit ship on a deep blue sea under a night sky of rolling cloud" loading="lazy" width="1600" height="1103"><figcaption><b>Work 13</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-04.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-04.jpg" alt="Abstract pour in teal, green and white like breaking waves" loading="lazy" width="1170" height="770"><figcaption><b>Work 14</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-05.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-05.jpg" alt="Abstract pour in silver, grey and black" loading="lazy" width="1170" height="1399"><figcaption><b>Work 15</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-06.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-06.jpg" alt="Abstract pour in olive and acid green" loading="lazy" width="1170" height="1414"><figcaption><b>Work 16</b><span>Enquire</span></figcaption></figure></button>
-    <button class="work" data-src="/assets/artists/mcclvx/mcclvx-15.jpg"><figure style="margin:0"><img src="/assets/artists/mcclvx/mcclvx-15.jpg" alt="Abstract textured piece in brown, cream, green and red" loading="lazy" width="1284" height="1597"><figcaption><b>Work 17</b><span>Enquire</span></figcaption></figure></button>
+  <div class="wall-head">
+    <h2>Works</h2>
+    <p>Prices in GBP, framing and delivery quoted separately.</p>
+  </div>
+  <section class="wall" id="wall" aria-label="Works by MCCXLV"></section>
+
+  <section class="cv">
+    <h2>Exhibitions and projects</h2>
+    <ul>
+      <li><span>2025</span>Art Director, Phareligions Apparel</li>
+      <li><span>2025</span>Creative direction and photography for David Blackmore</li>
+      <li><span>2024</span>Creative direction and photography for Ajebutter</li>
+      <li><span>2023</span>Creative direction and photography for Mohbad</li>
+      <li><span>2020</span>Creative direction, Naira Marley UK Tour merchandise</li>
+      <li><span>2019</span>Uber Live Art Exhibition</li>
+      <li><span>2019</span>Art Summit Nigeria, Lagos</li>
+      <li><span>2019</span>Eunisel Oil Nigeria, art installation</li>
+      <li><span>2019</span>Rele Art Gallery workshop participant</li>
+      <li><span>2018</span>Art Meets Music with Ufoma Onabrakpeya, Landmark Towers, Lagos</li>
+      <li><span>2018</span>Social Media Week Exhibition, Lagos</li>
+      <li><span>2018</span>International Culture and Arts Festival (ICAF), Radisson Blu, Lagos</li>
+      <li><span>2018</span>Exhibiting artist, Street Souk, Lagos</li>
+      <li><span>2018</span>Large scale mural, 18 ft by 24 ft, Lagos</li>
+      <li><span>2018</span>First international sale, private collector, New York</li>
+      <li><span>2018 on</span>Founder and Director, MCCXLVART: private viewings, commissions and tutoring, Lagos</li>
+    </ul>
   </section>
 </div>
 
@@ -146,14 +176,14 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
     <div>
       <div class="eyebrow" style="color:inherit;opacity:.7">Collectors, brands and spaces</div>
       <h2>Enquire about a piece.</h2>
-      <p>Buying an original, commissioning new work, or looking for art for an event, office or exhibition? Tell us what caught your eye and we will come back to you within two working days.</p>
+      <p>Buying an original, commissioning new work, or looking for art for an event, office or exhibition? Tell us which work caught your eye and we will come back to you within two working days.</p>
     </div>
     <form id="enquiry">
       <label for="e-name">Your name</label><input id="e-name" required>
       <label for="e-email">Email</label><input id="e-email" type="email" required>
       <label for="e-type">I'm interested in</label>
       <select id="e-type"><option>Buying a piece</option><option>A commission</option><option>An exhibition or event</option><option>Brand collaboration</option></select>
-      <label for="e-msg">Which work, and anything else we should know</label><textarea id="e-msg" rows="3" placeholder="Work 02, for my living room"></textarea>
+      <label for="e-msg">Which work, and anything else we should know</label><textarea id="e-msg" rows="3" placeholder="Polka Dot Fur Coat, for my living room"></textarea>
       <button class="btn" type="submit">Send enquiry</button>
       <p id="note" hidden></p>
     </form>
@@ -164,28 +194,75 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
   <section class="join">
     <div>
       <h3>Are you an artist?</h3>
-      <p>We are building a small roster of visual artists to represent in the UK.</p>
+      <p>We are building a small roster of artists to represent in the UK.</p>
     </div>
     <a href="mailto:hello@primpro.co.uk?subject=P%20Artists%20submission">Send us your portfolio</a>
   </section>
   <footer>
-    <span>P Artists is part of The P Collective, powered by Primpro Ltd.</span>
-    <span>All artworks © the artist. Images may not be reproduced without permission.</span>
+    <span>MCCXLV is represented in the UK by The P Collective, powered by Primpro Ltd. Follow him on <a href="https://instagram.com/mccxlv" target="_blank" rel="noopener">Instagram</a>.</span>
+    <span>All artworks © Ogedengbe Oladimeji. Images may not be reproduced without permission.</span>
   </footer>
 </div>
 
-<dialog id="viewer" aria-label="Artwork viewer">
-  <img id="viewer-img" alt="">
-  <div class="cap"><span id="viewer-cap"></span><button type="button" id="viewer-close">Close</button></div>
+<dialog id="viewer" aria-label="Artwork details">
+  <img id="v-img" alt="">
+  <div class="dcap"><div><b id="v-title"></b><span id="v-meta"></span><p id="v-desc"></p></div><button type="button" id="v-close">Close</button></div>
 </dialog>
 
 <script>
-const dlg=document.getElementById('viewer'),vi=document.getElementById('viewer-img'),vc=document.getElementById('viewer-cap');
-document.querySelectorAll('.work').forEach(b=>b.addEventListener('click',()=>{
-  const img=b.querySelector('img');vi.src=b.dataset.src;vi.alt=img.alt;vc.textContent=b.querySelector('b').textContent+'. '+img.alt;
+// Works from the artist's 2025 catalogue. Add an image path to show a work on the wall.
+const A='/assets/artists/mccxlv/';
+const works=[
+ {t:'Toxic System',m:'Acrylic on wood',w:18,h:20,y:2019,img:'toxic-system.jpg',d:'A figure conditioned to survive within harmful structures. The work reflects how adaptation often replaces escape in environments that quietly erode the self.'},
+ {t:'Polka Dot Fur Coat',m:'Mixed media on canvas',w:24,h:36,y:2025,img:'polka-dot-fur-coat.jpg',d:'Surface composure conceals heightened perception. Elegance becomes both protection and exposure under persistent diplopia.'},
+ {t:'Ember',m:'Mixed media on canvas',w:20,h:24,y:2025,img:'ember.jpg',d:'A self portrait formed in emotional exhaustion after intensity fades. Fragments of energy, humour and unease remain.'},
+ {t:'EVIM',m:'Acrylic on canvas',w:40,h:45,y:2024,img:'evim.jpg',d:'A figure suspended between human cognition and mechanical logic. Awareness fragments as technology reshapes perception and identity.'},
+ {t:'Feline',m:'Acrylic on canvas',w:30,h:36,y:2024,img:'feline.jpg',d:'Resilience and cultural value emerge amid dislocation and survival. Fragmented identity persists through fracture and adaptation.'},
+ {t:'Equanimity',m:'Acrylic on canvas',w:24,h:36,y:2025,img:'equanimity.jpg',d:'A lone figure navigates fire and darkness with composed agency. The work explores endurance, psychological regulation and mastery under extreme pressure.'},
+ {t:'Melancholia',m:'Mixed media on canvas',w:20,h:24,y:2018,img:'melancholia.jpg',d:'A reflection on Nigeria before and after independence, viewed through a fragmented psychological landscape. The work questions nationhood, memory and value.'},
+ {t:'Numb',m:'Acrylic on cardboard',w:18,h:20,y:2021,img:'numb.jpg',d:'Sensory and emotional shutdown coexist with fleeting euphoria and depression. The piece examines resilience under overexposure, heartbreak and systemic pressure on body and psyche.'},
+ {t:'The Fall and the Rise',m:'Mixed media on canvas',w:20,h:24,y:2019,img:'the-fall-and-the-rise.jpg',d:'Religion, industry and even the internet emerge as human attempts to confront and organise the burden of awareness.'},
+ {t:'Homo Excellence',m:'Mixed media on canvas',w:30,h:35,y:2018,img:'',d:'A reclaiming of identity against inherited stereotypes. The figure confronts imposed narratives of inferiority while asserting dignity, agency and self sovereignty.'},
+ {t:'Anxiety Denouement',m:'Acrylic on wood',w:18,h:20,y:2019,img:'',d:'Anxiety compressed to its threshold, where tension no longer escalates but clarifies. The distorted gaze traps the viewer inside the pause between pressure and release.'},
+ {t:'Stockholm',m:'Acrylic on canvas',w:24,h:32,y:2019,img:'',d:'An emotional contradiction where attachment and confinement coexist within the same psychological space.'},
+ {t:'Defiance',m:'Acrylic on canvas',w:18,h:22,y:2018,img:'defiance.jpg',d:'Of what use is the light when you can\'t see what\'s on the other side.'},
+ {t:'Fiat Fiend',m:'Acrylic on canvas',w:25,h:30,y:2020,img:'fiat-fiend.jpg',d:'A confrontation with obsession and artificial value. Money becomes both absence driven hunger and dominating force.'},
+ {t:'In the End',m:'Acrylic on canvas',w:30,h:35,y:2018,img:'in-the-end.jpg',d:'A symbolic vision of final reckoning where divine law, celestial intervention and human fate converge.'},
+ {t:'Obirin Arewa',m:'Mixed media on canvas',w:20,h:24,y:2018,img:'',d:'Multiple phases of womanhood unfold within a single figure. The work traces the shifting identities a woman inhabits across time.'},
+ {t:'Melanin Returns',m:'Acrylic on wood',w:18,h:20,y:2017,img:'',d:'An intimate reflection on loss and inheritance. Presence and absence collapse into a single moment of generational continuity.'},
+ {t:'Dream',m:'Acrylic on canvas',w:16,h:20,y:2019,img:'dream.jpg',d:'A recurring dream rendered as a psychological landscape. The wish for flight breaks the quiet as birds suddenly emerge, transforming absence into possibility.'},
+ {t:'My Space',m:'Mixed media on wood',w:30,h:36,y:2019,img:'my-space.jpg',d:'The search for a safe space, travelling through multiple dimensions.'},
+ {t:'Times',m:'Mixed media on canvas',w:20,h:24,y:2020,img:'',d:'Life unfolds as fragments rather than a continuous whole. Clarity emerges only when attention settles on a single moment within the many splinters of experience.'},
+ {t:'Thalassic',m:'Acrylic on canvas',w:20,h:30,y:2020,img:'thalassic.jpg',d:'Converging landscapes collapse into a single perceptual field. Land, sea and sky dissolve into one continuous horizon of sensation.'},
+ {t:'Boutade',m:'Acrylic on canvas',w:25,h:30,y:2020,img:'boutade.jpg',d:'Internal pain translated into uncontrolled gesture. The work visualises pressure seeking release when the body is overwhelmed.'},
+ {t:'Squall',m:'Acrylic on canvas',w:18,h:20,y:2020,img:'squall.jpg',d:'Emotional tempest as a passing force rather than a permanent state.'},
+ {t:'Verdant',m:'Acrylic on canvas',w:18,h:20,y:2020,img:'verdant.jpg',d:'Emotional reset. Regeneration emerging without certainty or direction.'},
+ {t:'Bluee',m:'Acrylic on wood',w:18,h:20,y:2019,img:'',d:'Lustful oscillation, striving to stay loyal.'},
+ {t:'Zerodegreez',m:'Acrylic on wood',w:18,h:20,y:2019,img:'',d:'Snow melts to mud.'},
+ {t:'Luster',m:'Acrylic on canvas',w:20,h:25,y:2018,img:'',d:'Light fractures the figure through opposing forces. Illumination reveals presence while preserving shadow.'},
+ {t:'Inner Space',m:'Acrylic on wood',w:40,h:45,y:2019,img:'',d:'Movement and constellation of stars.'},
+ {t:'Caliber',m:'Acrylic on canvas',w:16,h:20,y:2018,img:'',d:'A formation of birds moves forward under one leader, while beneath the landscape a hidden field of bones rests under swamp like terrain.'},
+ {t:'Untitled',m:'Acrylic on wood',w:20,h:20,y:2019,img:'',d:'A butterfly pollinating a purple hibiscus in the dark. Quiet elegance, transformation and the fragile balance between delicacy and authority in nature.'}
+];
+const gbp={'Polka Dot Fur Coat': 4300, 'Numb': 4000, 'Defiance': 3250, 'Equanimity': 2700, 'The Fall and the Rise': 2700, 'Anxiety Denouement': 2700, 'Ember': 1950, 'Melancholia': 1650, 'Homo Excellence': 1850, 'In the End': 1850, 'Toxic System': 1300, 'Boutade': 1300, 'EVIM': 750, 'Feline': 750, 'Stockholm': 750, 'Inner Space': 750, 'Thalassic': 700, 'Obirin Arewa': 600, 'Fiat Fiend': 550, 'Luster': 550, 'My Space': 500, 'Times': 450, 'Squall': 450, 'Bluee': 450, 'Melanin Returns': 450, 'Caliber': 400, 'Verdant': 400, 'Zerodegreez': 350, 'Dream': 300, 'Untitled': 200};
+const price=w=>gbp[w.t]?'£'+gbp[w.t].toLocaleString('en-GB'):'Price on request';
+const cm=n=>Math.round(n*2.54);
+const size=w=>`${w.w} x ${w.h} in (${cm(w.w)} x ${cm(w.h)} cm)`;
+const wall=document.getElementById('wall');
+works.filter(w=>w.img).forEach(w=>{
+  const b=document.createElement('button');b.className='work';b.type='button';
+  b.innerHTML=`<img src="${A+w.img}" alt="${w.t} by MCCXLV, ${w.m.toLowerCase()}, ${w.y}" loading="lazy"><span class="cap"><b>${w.t}</b><span>${w.m}, ${w.y}</span><span>${size(w)}</span><span class="price">${price(w)}</span></span>`;
+  b.addEventListener('click',()=>showWork(w));wall.appendChild(b);
+});
+const dlg=document.getElementById('viewer');
+function showWork(w){
+  const i=document.getElementById('v-img');i.src=A+w.img;i.alt=w.t+' by MCCXLV';
+  document.getElementById('v-title').textContent=w.t;
+  document.getElementById('v-meta').textContent=`${w.m}, ${w.y}. ${size(w)}. ${price(w)}`;
+  document.getElementById('v-desc').textContent=w.d;
   if(dlg.showModal)dlg.showModal();
-}));
-document.getElementById('viewer-close').onclick=()=>dlg.close();
+}
+document.getElementById('v-close').onclick=()=>dlg.close();
 dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 document.getElementById('enquiry').addEventListener('submit',e=>{
   e.preventDefault();const v=id=>document.getElementById(id).value;
