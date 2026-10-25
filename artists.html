@@ -69,6 +69,7 @@ blockquote{margin:0;border-left:4px solid var(--accent);padding:4px 0 4px 18px;f
 .work .cap{padding:12px 14px;display:grid;gap:2px}
 .work .cap b{font-weight:600;font-size:1rem}
 .work .cap span{color:var(--muted);font-size:.82rem}
+.work .cap .sig{color:var(--accent);font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.14em}
 .work .cap .price{color:var(--ink);font-weight:600;font-size:.95rem;margin-top:6px;font-variant-numeric:tabular-nums}
 
 .cv{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:40px;padding-block:48px;border-top:1px solid var(--line)}
@@ -144,7 +145,7 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
 
   <div class="wall-head">
     <h2>Works</h2>
-    <p>Prices in GBP, framing and delivery quoted separately.</p>
+    <p>Prices in GBP. Framing and delivery quoted separately. Each work comes with a signed certificate of authenticity.</p>
   </div>
   <section class="wall" id="wall" aria-label="Works by MCCXLV"></section>
 
@@ -213,10 +214,10 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
 // Works from the artist's 2025 catalogue. Add an image path to show a work on the wall.
 const A='/assets/artists/mccxlv/';
 const works=[
+ {t:'EVIM',m:'Acrylic on canvas',w:40,h:45,y:2024,img:'evim.jpg',d:'A figure suspended between human cognition and mechanical logic. Awareness fragments as technology reshapes perception and identity.'},
  {t:'Toxic System',m:'Acrylic on wood',w:18,h:20,y:2019,img:'toxic-system.jpg',d:'A figure conditioned to survive within harmful structures. The work reflects how adaptation often replaces escape in environments that quietly erode the self.'},
  {t:'Polka Dot Fur Coat',m:'Mixed media on canvas',w:24,h:36,y:2025,img:'polka-dot-fur-coat.jpg',d:'Surface composure conceals heightened perception. Elegance becomes both protection and exposure under persistent diplopia.'},
  {t:'Ember',m:'Mixed media on canvas',w:20,h:24,y:2025,img:'ember.jpg',d:'A self portrait formed in emotional exhaustion after intensity fades. Fragments of energy, humour and unease remain.'},
- {t:'EVIM',m:'Acrylic on canvas',w:40,h:45,y:2024,img:'evim.jpg',d:'A figure suspended between human cognition and mechanical logic. Awareness fragments as technology reshapes perception and identity.'},
  {t:'Feline',m:'Acrylic on canvas',w:30,h:36,y:2024,img:'feline.jpg',d:'Resilience and cultural value emerge amid dislocation and survival. Fragmented identity persists through fracture and adaptation.'},
  {t:'Equanimity',m:'Acrylic on canvas',w:24,h:36,y:2025,img:'equanimity.jpg',d:'A lone figure navigates fire and darkness with composed agency. The work explores endurance, psychological regulation and mastery under extreme pressure.'},
  {t:'Melancholia',m:'Mixed media on canvas',w:20,h:24,y:2018,img:'melancholia.jpg',d:'A reflection on Nigeria before and after independence, viewed through a fragmented psychological landscape. The work questions nationhood, memory and value.'},
@@ -244,14 +245,15 @@ const works=[
  {t:'Caliber',m:'Acrylic on canvas',w:16,h:20,y:2018,img:'',d:'A formation of birds moves forward under one leader, while beneath the landscape a hidden field of bones rests under swamp like terrain.'},
  {t:'Untitled',m:'Acrylic on wood',w:20,h:20,y:2019,img:'',d:'A butterfly pollinating a purple hibiscus in the dark. Quiet elegance, transformation and the fragile balance between delicacy and authority in nature.'}
 ];
-const gbp={'Polka Dot Fur Coat': 4300, 'Numb': 4000, 'Defiance': 3250, 'Equanimity': 2700, 'The Fall and the Rise': 2700, 'Anxiety Denouement': 2700, 'Ember': 1950, 'Melancholia': 1650, 'Homo Excellence': 1850, 'In the End': 1850, 'Toxic System': 1300, 'Boutade': 1300, 'EVIM': 750, 'Feline': 750, 'Stockholm': 750, 'Inner Space': 750, 'Thalassic': 700, 'Obirin Arewa': 600, 'Fiat Fiend': 550, 'Luster': 550, 'My Space': 500, 'Times': 450, 'Squall': 450, 'Bluee': 450, 'Melanin Returns': 450, 'Caliber': 400, 'Verdant': 400, 'Zerodegreez': 350, 'Dream': 300, 'Untitled': 200};
+const gbp={"Polka Dot Fur Coat":6500,"Numb":4750,"Defiance":3750,"Equanimity":6500,"The Fall and the Rise":3250,"Anxiety Denouement":3250,"Ember":2500,"Homo Excellence":5250,"In the End":5250,"Melancholia":2500,"Toxic System":2750,"Boutade":3750,"EVIM":13500,"Feline":5500,"Stockholm":4000,"Inner Space":9000,"Thalassic":3000,"Obirin Arewa":2500,"Fiat Fiend":3750,"Luster":2500,"My Space":5500,"Times":2500,"Squall":2000,"Bluee":2000,"Melanin Returns":2000,"Caliber":1750,"Verdant":2000,"Zerodegreez":2000,"Dream":1750,"Untitled":2000};
+const SIG=["EVIM","Polka Dot Fur Coat","Equanimity","Toxic System"];
 const price=w=>gbp[w.t]?'£'+gbp[w.t].toLocaleString('en-GB'):'Price on request';
 const cm=n=>Math.round(n*2.54);
 const size=w=>`${w.w} x ${w.h} in (${cm(w.w)} x ${cm(w.h)} cm)`;
 const wall=document.getElementById('wall');
 works.filter(w=>w.img).forEach(w=>{
   const b=document.createElement('button');b.className='work';b.type='button';
-  b.innerHTML=`<img src="${A+w.img}" alt="${w.t} by MCCXLV, ${w.m.toLowerCase()}, ${w.y}" loading="lazy"><span class="cap"><b>${w.t}</b><span>${w.m}, ${w.y}</span><span>${size(w)}</span><span class="price">${price(w)}</span></span>`;
+  b.innerHTML=`<img src="${A+w.img}" alt="${w.t} by MCCXLV, ${w.m.toLowerCase()}, ${w.y}" loading="lazy"><span class="cap">${SIG.includes(w.t)?'<span class="sig">Signature work</span>':''}<b>${w.t}</b><span>${w.m}, ${w.y}</span><span>${size(w)}</span><span class="price">${price(w)}</span></span>`;
   b.addEventListener('click',()=>showWork(w));wall.appendChild(b);
 });
 const dlg=document.getElementById('viewer');
