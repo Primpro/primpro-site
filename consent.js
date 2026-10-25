@@ -16,7 +16,7 @@
     if(document.getElementById('pp-consent'))return;
     var b=document.createElement('div'); b.id='pp-consent'; b.setAttribute('role','dialog'); b.setAttribute('aria-label','Cookie choices');
     b.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;max-width:640px;margin:0 auto;background:#141414;color:#EDE8DF;border:1px solid #33312D;border-radius:12px;padding:16px 18px;font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.35)';
-    b.innerHTML='<p style="margin:0 0 12px">We use cookies for analytics and to measure our adverts on Google, Meta and TikTok. They only load if you accept. You can change your mind any time from the Cookie settings link at the bottom of the page.</p>'+
+    b.innerHTML='<p style="margin:0 0 12px">We use cookies for analytics and to measure our adverts on Google, Meta and TikTok. They only load if you accept. You can change your mind any time from the Cookie settings link at the bottom of the page. <a href="/privacy" style="color:#EDE8DF">Privacy policy</a></p>'+
       '<div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="pp-accept" style="background:#EDE8DF;color:#141414;border:0;border-radius:999px;padding:9px 18px;font:inherit;font-weight:600;cursor:pointer">Accept</button>'+
       '<button type="button" id="pp-decline" style="background:transparent;color:#EDE8DF;border:1px solid #EDE8DF;border-radius:999px;padding:9px 18px;font:inherit;font-weight:600;cursor:pointer">Decline</button></div>';
     document.body.appendChild(b);
