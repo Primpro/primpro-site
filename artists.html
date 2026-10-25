@@ -53,8 +53,8 @@ p{margin:0;max-width:62ch}
 .artist .say{color:var(--muted);font-size:.9rem;margin-top:2px}
 .artist .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .artist .meta span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;color:var(--muted)}
-.portrait{margin-top:24px;aspect-ratio:4/5;max-width:100%;background:var(--surface);border:1px dashed var(--line);display:flex;align-items:flex-end;padding:14px;color:var(--muted);font-size:.85rem}
-.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait{margin:24px 0 0;aspect-ratio:4/5;max-width:100%;background:var(--surface);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:42% 40%;filter:grayscale(1)}
 .copy{display:flex;flex-direction:column;gap:16px;min-width:0}
 .copy p{font-weight:300;font-size:1.05rem}
 blockquote{margin:0;border-left:4px solid var(--accent);padding:4px 0 4px 18px;font-size:1.35rem;font-weight:600;line-height:1.35;letter-spacing:-.01em}
@@ -132,7 +132,7 @@ dialog button{background:none;border:1px solid #EDE8DF;color:#EDE8DF;border-radi
       <div class="full">Ogedengbe Oladimeji</div>
       <div class="say">Said /Maekli:v/</div>
       <div class="meta"><span>Conceptual abstract artist</span><span>Nigeria</span><span>Self taught</span></div>
-      <div class="portrait" id="portrait"><span>Artist portrait</span></div>
+      <figure class="portrait" id="portrait"><img src="/assets/artists/mccxlv/portrait-6471.jpg" alt="Portrait of Ogedengbe 'MCCXLV' Oladimeji holding a paintbrush" width="1000" height="886"></figure>
     </div>
     <div class="copy">
       <blockquote>"From ashes, we mould. I explore the beauty within imperfection."</blockquote>
