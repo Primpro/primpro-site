@@ -183,7 +183,7 @@ footer{padding-block:40px;color:var(--muted);font-size:.88rem;display:flex;justi
       <div class="eyebrow">For colleges, schools and partners</div>
       <h2>Bring Pull Up to your students.</h2>
       <p>We run Pull Up as a four day block or across a term. Tell us about your students and we'll shape it around them.</p>
-      <div class="mail"><code id="addr">adedolapok@primpro.co.uk</code><button type="button" id="copy">Copy email</button></div>
+      <div class="mail"><code id="addr">pullup@primpro.co.uk</code><button type="button" id="copy">Copy email</button></div>
     </div>
     <form id="enquiry">
       <label for="f-name">Your name</label><input id="f-name" required placeholder="Jane Smith">
@@ -213,7 +213,7 @@ document.getElementById('copy').onclick=async e=>{
 };
 document.getElementById('enquiry').addEventListener('submit',e=>{
   e.preventDefault();const n=document.getElementById('formNote');
-  const v=id=>document.getElementById(id).value;const sub=encodeURIComponent('Pull Up enquiry: '+v('f-org'));const b=encodeURIComponent('Name: '+v('f-name')+'\nOrganisation: '+v('f-org')+'\nEmail: '+v('f-email')+'\n\n'+v('f-msg'));window.location.href='mailto:adedolapok@primpro.co.uk?subject='+sub+'&body='+b;n.hidden=false;n.textContent='Your email app should open with the enquiry ready to send. If it does not, email adedolapok@primpro.co.uk directly.';
+  const v=id=>document.getElementById(id).value;const sub=encodeURIComponent('Pull Up enquiry: '+v('f-org'));const b=encodeURIComponent('Name: '+v('f-name')+'\nOrganisation: '+v('f-org')+'\nEmail: '+v('f-email')+'\n\n'+v('f-msg'));window.location.href='mailto:pullup@primpro.co.uk?subject='+sub+'&body='+b;n.hidden=false;n.textContent='Your email app should open with the enquiry ready to send. If it does not, email pullup@primpro.co.uk directly.';
 });
 </script>
 </body>
