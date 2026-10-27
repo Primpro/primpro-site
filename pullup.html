@@ -10,21 +10,21 @@
 <link rel="icon" href="/favicon.svg">
 <script src="/consent.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap">
 <style>
 /* Layout: bold poster hero, then a four day run sheet, story, photo carousel, and a booking block for colleges */
 :root{
-  --bg:#F3F4F7; --surface:#FFFFFF; --ink:#12142B; --muted:#5A5E78;
-  --accent:#2E3BD6; --accent-ink:#FFFFFF; --sun:#F2B705; --line:#DADCE6;
-  --display:"Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
-  --body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bg:#EDE8DF; --surface:#F6F3EE; --ink:#141414; --muted:#5F5A52; --line:#D6D0C4;
+  --accent:#B5432A; --accent-ink:#FFFFFF; --sun:#141414; --sun-ink:#EDE8DF;
+  --display:"Manrope", "Arial", system-ui, sans-serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1024; --surface:#171A35; --ink:#EEF0FA; --muted:#A3A7C4;
-  --accent:#7D88FF; --accent-ink:#0E1024; --sun:#F6C83A; --line:#2A2E52; color-scheme:dark}}
+  --bg:#141414; --surface:#1E1D1B; --ink:#EDE8DF; --muted:#A9A296; --line:#33312D;
+  --accent:#D2603F; --accent-ink:#141414; --sun:#EDE8DF; --sun-ink:#141414; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0E1024; --surface:#171A35; --ink:#EEF0FA; --muted:#A3A7C4;
-  --accent:#7D88FF; --accent-ink:#0E1024; --sun:#F6C83A; --line:#2A2E52; color-scheme:dark}
+  --bg:#141414; --surface:#1E1D1B; --ink:#EDE8DF; --muted:#A9A296; --line:#33312D;
+  --accent:#D2603F; --accent-ink:#141414; --sun:#EDE8DF; --sun-ink:#141414; color-scheme:dark}
 
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
 .wrap{max-width:1080px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
@@ -33,7 +33,7 @@ img{max-width:100%}
 [hidden]{display:none!important}
 .video{position:relative;aspect-ratio:16/9;width:100%;margin-top:24px;border-radius:14px;overflow:hidden;background:#000}
 .video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.sound{position:absolute;right:14px;top:14px;border:0;border-radius:999px;padding:8px 14px;background:var(--sun);color:#0E1024;font:600 .85rem var(--body);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.sound{position:absolute;right:14px;top:14px;border:0;border-radius:999px;padding:8px 14px;background:var(--sun);color:var(--sun-ink);font:600 .85rem var(--body);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3)}
 .story figure{margin:0;display:flex;flex-direction:column;gap:20px;min-width:0}
 .story figure img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 40%;border-radius:14px;display:block}
 .slide.photo{position:relative;padding:0;border:0;overflow:hidden;background:var(--surface)}
@@ -61,7 +61,7 @@ a{color:var(--accent)}
 .hero h1{font-size:clamp(4.5rem,18vw,11rem);font-weight:800;letter-spacing:-.05em}
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero .tag{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:500}
-.hero .tag mark{background:var(--sun);color:#12142B;padding:0 .2em}
+.hero .tag mark{background:var(--sun);color:var(--sun-ink);padding:0 .2em}
 .hero p.lead{font-size:1.1rem;color:var(--muted)}
 .ctas{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-block;font-weight:600;border-radius:999px;padding:14px 24px;text-decoration:none;border:2px solid var(--accent);font-family:var(--body);font-size:1rem;cursor:pointer}
@@ -110,7 +110,7 @@ a{color:var(--accent)}
 .book form{display:flex;flex-direction:column;gap:12px;min-width:0}
 .book label{font-size:.85rem;font-weight:600}
 .book input,.book textarea{width:100%;box-sizing:border-box;border-radius:10px;border:0;padding:12px 14px;font:inherit;background:var(--surface);color:var(--ink)}
-.book .btn{background:var(--sun);color:#12142B;border-color:var(--sun);align-self:flex-start}
+.book .btn{background:var(--sun);color:var(--sun-ink);border-color:var(--sun);align-self:flex-start}
 .mail{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
 .mail code{background:color-mix(in srgb,var(--accent-ink) 18%,transparent);padding:6px 10px;border-radius:8px;font-family:var(--body);user-select:all}
 .mail button{border:1px solid currentColor;background:transparent;color:inherit;border-radius:8px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.85rem}
@@ -240,7 +240,7 @@ document.getElementById('enquiry').addEventListener('submit',e=>{
 </script>
 <script>
 (function(){
-  var v=document.getElementById('introVideo'),b=document.getElementById('soundBtn'),src='/assets/pullup/video/intro.m3u8',ready=false;
+  var v=document.getElementById('introVideo'),b=document.getElementById('soundBtn'),src='/assets/pullup/video2/intro.m3u8',ready=false;
   function load(){
     if(ready)return;ready=true;
     if(v.canPlayType('application/vnd.apple.mpegurl')){v.src=src;start();return;}
